@@ -1,19 +1,19 @@
 <script>
+import SiteHeader from "./components/SiteHeader.vue";
 export default {
-
+  components: {
+    SiteHeader
+  }
 }
 </script>
 
 <template>
-  <h1>Vue Hello <span>World</span></h1>
+  <!-- Site Header -->
+  <SiteHeader />
+
+
 </template>
 
 <style lang="scss">
-h1 {
-  color: red;
 
-  span {
-    background-color: blue;
-  }
-}
 </style>
