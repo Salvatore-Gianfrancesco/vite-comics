@@ -1,8 +1,10 @@
 <script>
-import SiteHeader from "./components/SiteHeader.vue";
+import SiteHeader from "./components/SiteHeader.vue"
+import MainMenu from "./components/MainMenu.vue"
 export default {
   components: {
-    SiteHeader
+    SiteHeader,
+    MainMenu,
   }
 }
 </script>
@@ -18,6 +20,8 @@ export default {
         <div class="text d-flex align-items-center h-100 fs-4">Content goes Here</div>
       </div>
     </section>
+
+    <MainMenu />
   </main>
 
 </template>
