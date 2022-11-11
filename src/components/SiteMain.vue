@@ -1,8 +1,10 @@
 <script>
+import MainJumbotron from './MainJumbotron.vue';
 import MainMenu from './MainMenu.vue';
 export default {
     name: "SiteMain",
     components: {
+        MainJumbotron,
         MainMenu
     }
 }
@@ -10,12 +12,8 @@ export default {
 
 <template>
     <main>
-        <!-- Content Here Section -->
-        <section class="content_here">
-            <div class="container h-100">
-                <div class="text d-flex align-items-center h-100 fs-4">Content goes Here</div>
-            </div>
-        </section>
+        <!-- Main Jumbotron -->
+        <MainJumbotron />
 
         <!-- Main Menu Section -->
         <MainMenu />
