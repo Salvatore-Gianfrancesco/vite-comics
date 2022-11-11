@@ -1,10 +1,12 @@
 <script>
-import MainJumbotron from './MainJumbotron.vue';
-import MainMenu from './MainMenu.vue';
+import MainJumbotron from './MainJumbotron.vue'
+import MainComics from './MainComics.vue'
+import MainMenu from './MainMenu.vue'
 export default {
     name: "SiteMain",
     components: {
         MainJumbotron,
+        MainComics,
         MainMenu
     }
 }
@@ -15,7 +17,10 @@ export default {
         <!-- Main Jumbotron -->
         <MainJumbotron />
 
-        <!-- Main Menu Section -->
+        <!-- Main Comics -->
+        <MainComics />
+
+        <!-- Main Menu -->
         <MainMenu />
     </main>
 </template>
