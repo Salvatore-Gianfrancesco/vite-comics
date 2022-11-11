@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-    <section>
+    <section class="main_menu">
         <div class="container d-flex justify-content-between p-5">
             <a :href="item.href" v-for="item in menu">
                 <!-- <img :src="'../assets/img/' + item.img" alt=""> -->
@@ -49,7 +49,7 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/scss/variables.scss" as *;
 
-section {
+.main_menu {
     background-color: $primary_color;
 
     a {
