@@ -3,47 +3,17 @@ export default {
     name: "SiteHeader",
     data() {
         return {
-            menu: [
-                {
-                    text: "characters",
-                    href: "#"
-                },
-                {
-                    text: "comics",
-                    href: "#"
-                },
-                {
-                    text: "movies",
-                    href: "#"
-                },
-                {
-                    text: "tv",
-                    href: "#"
-                },
-                {
-                    text: "games",
-                    href: "#"
-                },
-                {
-                    text: "collectibles",
-                    href: "#"
-                },
-                {
-                    text: "videos",
-                    href: "#"
-                },
-                {
-                    text: "fans",
-                    href: "#"
-                },
-                {
-                    text: "news",
-                    href: "#"
-                },
-                {
-                    text: "shop",
-                    href: "#"
-                },
+            nav_items: [
+                "characters",
+                "comics",
+                "movies",
+                "tv",
+                "games",
+                "collectibles",
+                "videos",
+                "fans",
+                "news",
+                "shop",
 
             ]
         }
@@ -61,35 +31,50 @@ export default {
 
             <!-- Navbar -->
             <nav class="navbar">
-                <a :href="item.href" v-for="item in menu" :class="(item.text === 'comics') ? 'active' : ''">
-                    {{ item.text }}
+                <a href="#" v-for="item in nav_items" :class="(item === 'comics') ? 'active' : ''">
+                    {{ item }}
+                    <div class="active_bar"></div>
                 </a>
             </nav>
         </div>
     </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../assets/scss/variables.scss" as *;
 
 header {
     background-color: $light;
 
+    img {
+        height: 80px;
+        aspect-ratio: 1/1;
+    }
+
     a {
         color: $dark;
         text-decoration: none;
         text-transform: uppercase;
-        padding: 0 0.5rem;
+        margin: 1rem;
+        position: relative;
         transition: 0.3s;
 
         &:hover {
             color: $primary_color;
         }
 
-        &.active {
-            color: $primary_color;
-            text-decoration: underline;
+        .active_bar {
+            height: 5px;
+            width: 100%;
+            position: absolute;
+            bottom: -44px;
+            left: 0;
         }
+
+        &.active .active_bar {
+            background-color: $primary_color;
+        }
+
     }
 }
 </style>

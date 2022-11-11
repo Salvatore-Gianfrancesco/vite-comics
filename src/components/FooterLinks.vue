@@ -4,112 +4,37 @@ export default {
     data() {
         return {
             dc_comics: [
-                {
-                    text: "Characters",
-                    href: "#"
-                },
-                {
-                    text: "Comics",
-                    href: "#"
-                },
-                {
-                    text: "Movies",
-                    href: "#"
-                },
-                {
-                    text: "TV",
-                    href: "#"
-                },
-                {
-                    text: "Games",
-                    href: "#"
-                },
-                {
-                    text: "Videos",
-                    href: "#"
-                },
-                {
-                    text: "News",
-                    href: "#"
-                }
+                "Characters",
+                "Comics",
+                "Movies",
+                "TV",
+                "Games",
+                "Videos",
+                "News"
             ],
             shop: [
-                {
-                    text: "Shop DC",
-                    href: "#"
-                },
-                {
-                    text: "Shop DC Collectibles",
-                    href: "#"
-                }
+                "Shop DC",
+                "Shop DC Collectibles"
             ],
             dc: [
-                {
-                    text: "Terms Of Use",
-                    href: "#"
-                },
-                {
-                    text: "Privacy policy (New)",
-                    href: "#"
-                },
-                {
-                    text: "Add Choices",
-                    href: "#"
-                },
-                {
-                    text: "Advertising",
-                    href: "#"
-                },
-                {
-                    text: "Jobs",
-                    href: "#"
-                },
-                {
-                    text: "Subscriptions",
-                    href: "#"
-                },
-                {
-                    text: "Talent Workshops",
-                    href: "#"
-                },
-                {
-                    text: "CPSC Certificates",
-                    href: "#"
-                },
-                {
-                    text: "Ratings",
-                    href: "#"
-                },
-                {
-                    text: "Shop Help",
-                    href: "#"
-                },
-                {
-                    text: "Contact Us",
-                    href: "#"
-                },
+                "Terms Of Use",
+                "Privacy policy (New)",
+                "Add Choices",
+                "Advertising",
+                "Jobs",
+                "Subscriptions",
+                "Talent Workshops",
+                "CPSC Certificates",
+                "Ratings",
+                "Shop Help",
+                "Contact Us"
             ],
             sites: [
-                {
-                    text: "DC",
-                    href: "#"
-                },
-                {
-                    text: "MAD Magazine",
-                    href: "#"
-                },
-                {
-                    text: "DC Kids",
-                    href: "#"
-                },
-                {
-                    text: "DC Universe",
-                    href: "#"
-                },
-                {
-                    text: "DC Power Visa",
-                    href: "#"
-                }
+                "DC",
+                "MAD Magazine",
+                "DC Kids",
+                "DC Universe",
+                "DC Power Visa"
             ]
         }
     }
@@ -117,24 +42,24 @@ export default {
 </script>
 
 <template>
-    <section class="footer_links py-4">
+    <section class="footer_links">
         <div class="container">
             <div class="row justify-content-between">
                 <!-- Links -->
-                <div class="col">
+                <div class="col-6 py-4">
                     <div class="container-fluid">
                         <div class="row justify-content-start">
                             <div class="col">
                                 <!-- DC COMICS -->
                                 <h5 class="text-uppercase">dc comics</h5>
                                 <ul class="p-0">
-                                    <li v-for="link in dc_comics"><a :href="link.href">{{ link.text }}</a></li>
+                                    <li v-for="link in dc_comics"><a href="#">{{ link }}</a></li>
                                 </ul>
 
                                 <!-- SHOP -->
                                 <h5 class="text-uppercase">shop</h5>
                                 <ul class="p-0">
-                                    <li v-for="link in shop"><a :href="link.href">{{ link.text }}</a></li>
+                                    <li v-for="link in shop"><a href="#">{{ link }}</a></li>
                                 </ul>
                             </div>
 
@@ -142,7 +67,7 @@ export default {
                                 <!-- DC -->
                                 <h5 class="text-uppercase">dc</h5>
                                 <ul class="p-0">
-                                    <li v-for="link in dc"><a :href="link.href">{{ link.text }}</a></li>
+                                    <li v-for="link in dc"><a href="#">{{ link }}</a></li>
                                 </ul>
                             </div>
 
@@ -150,7 +75,7 @@ export default {
                                 <!-- SITES -->
                                 <h5 class="text-uppercase">sites</h5>
                                 <ul class="p-0">
-                                    <li v-for="link in sites"><a :href="link.href">{{ link.text }}</a></li>
+                                    <li v-for="link in sites"><a href="#">{{ link }}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -158,17 +83,15 @@ export default {
                 </div>
 
                 <!-- Logo -->
-                <div class="col">
-                    <div class="logo">
-                        <img src="../assets/img/dc-logo-bg.png" alt="">
-                    </div>
+                <div class="col-6">
+                    <div class="logo h-100"></div>
                 </div>
             </div>
         </div>
     </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../assets/scss/variables.scss" as *;
 
 .footer_links {
@@ -183,10 +106,17 @@ export default {
     a {
         color: $gray;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
-    .logo img {
-        object-fit: contain;
+    .logo {
+        background-image: url("../assets/img/dc-logo-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 }
 </style>

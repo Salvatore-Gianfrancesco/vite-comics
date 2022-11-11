@@ -1,14 +1,12 @@
 <script>
 import SiteHeader from "./components/SiteHeader.vue"
-import MainMenu from "./components/MainMenu.vue"
-import FooterLinks from "./components/FooterLinks.vue"
-import FooterSocial from "./components/FooterSocial.vue"
+import SiteMain from "./components/SiteMain.vue"
+import SiteFooter from "./components/SiteFooter.vue"
 export default {
   components: {
     SiteHeader,
-    MainMenu,
-    FooterLinks,
-    FooterSocial
+    SiteMain,
+    SiteFooter
   }
 }
 </script>
@@ -18,26 +16,10 @@ export default {
   <SiteHeader />
 
   <!-- Site Main -->
-  <main>
-    <!-- Content Here Section -->
-    <section class="content_here">
-      <div class="container h-100">
-        <div class="text d-flex align-items-center h-100 fs-4">Content goes Here</div>
-      </div>
-    </section>
-
-    <!-- Main Menu Section -->
-    <MainMenu />
-  </main>
+  <SiteMain />
 
   <!-- Site Footer -->
-  <footer>
-    <!-- Footer Links Section -->
-    <FooterLinks />
-
-    <!-- Footer Social -->
-    <FooterSocial />
-  </footer>
+  <SiteFooter />
 
 </template>
 

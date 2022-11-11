@@ -25,7 +25,7 @@ export default {
     </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../assets/scss/variables.scss" as *;
 
 .footer_social {
@@ -36,16 +36,26 @@ export default {
         border: 2px solid $primary_color;
         padding: 0.5rem;
         display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     a {
         color: $primary_color;
         font-weight: bold;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     img {
         padding: 0 0.5rem;
+        cursor: pointer;
     }
 }
 </style>
