@@ -7,29 +7,34 @@ export default {
                 {
                     text: "digital comics",
                     href: "#",
-                    img: "buy-comics-digital-comics.png"
+                    image: "buy-comics-digital-comics.png"
                 },
                 {
                     text: "dc merchandise",
                     href: "#",
-                    img: "buy-comics-merchandise.png"
+                    image: "buy-comics-merchandise.png"
                 },
                 {
                     text: "subscription",
                     href: "#",
-                    img: "buy-comics-subscriptions.png"
+                    image: "buy-comics-subscriptions.png"
                 },
                 {
                     text: "comic shop locator",
                     href: "#",
-                    img: "buy-comics-shop-locator.png"
+                    image: "buy-comics-shop-locator.png"
                 },
                 {
                     text: "dc power visa",
                     href: "#",
-                    img: "buy-dc-power-visa.svg"
+                    image: "buy-dc-power-visa.svg"
                 }
             ]
+        }
+    },
+    methods: {
+        getImageUrl(name) {
+            return new URL(`../assets/img/${name}`, import.meta.url).href
         }
     }
 }
@@ -37,10 +42,10 @@ export default {
 
 <template>
     <section class="main_menu">
-        <div class="container d-flex justify-content-between p-5">
-            <a :href="item.href" v-for="item in menu">
-                <!-- <img :src="'../assets/img/' + item.img" alt=""> -->
-                <div class="text-uppercase">{{ item.text }}</div>
+        <div class="container d-flex justify-content-evenly">
+            <a :href="item.href" v-for="item in menu" class="d-flex align-items-center">
+                <img :src="getImageUrl(item.image)" alt="">
+                <div class="text-uppercase ps-2">{{ item.text }}</div>
             </a>
         </div>
     </section>
@@ -56,10 +61,16 @@ export default {
         color: $light;
         text-decoration: none;
         transition: 0.3s;
+        white-space: nowrap;
 
         &:hover {
             text-decoration: underline;
         }
+    }
+
+    img {
+        height: 50%;
+        max-width: 50%;
     }
 }
 </style>
