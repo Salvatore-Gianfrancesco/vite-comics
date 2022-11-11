@@ -1,10 +1,10 @@
 <script>
 import comics from "../data/comics.js"
-import Comic from "./Comic.vue";
+import ComicItem from "./ComicItem.vue";
 export default {
     name: "MainComics",
     components: {
-        Comic
+        ComicItem
     },
     data() {
         return {
@@ -18,7 +18,7 @@ export default {
     <section class="main_comics pb-4">
         <div class="container">
             <div class="row row-cols-6 gx-3 py-5">
-                <Comic class="col" v-for="comic in comics" :image="comic.thumb" :text="comic.series" />
+                <ComicItem class="col" v-for="comic in comics" :image="comic.thumb" :text="comic.series" />
             </div>
         </div>
 
