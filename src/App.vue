@@ -2,11 +2,13 @@
 import SiteHeader from "./components/SiteHeader.vue"
 import MainMenu from "./components/MainMenu.vue"
 import FooterLinks from "./components/FooterLinks.vue"
+import FooterSocial from "./components/FooterSocial.vue"
 export default {
   components: {
     SiteHeader,
     MainMenu,
-    FooterLinks
+    FooterLinks,
+    FooterSocial
   }
 }
 </script>
@@ -32,6 +34,9 @@ export default {
   <footer>
     <!-- Footer Links Section -->
     <FooterLinks />
+
+    <!-- Footer Social -->
+    <FooterSocial />
   </footer>
 
 </template>
